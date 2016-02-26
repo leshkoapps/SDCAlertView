@@ -84,7 +84,7 @@
 
             return -x0 + envelope * (x0 * cosf(omega1 * t) + ((beta * x0 + v0) / omega1) * sinf(omega1 * t));
         };
-    } else if (beta == omega0) {
+    } else if ((fabs((beta) - (omega0)) < FLT_EPSILON)) {
         // Critically damped
         oscillation = ^(CGFloat t) {
             CGFloat envelope = expf(-beta * t);

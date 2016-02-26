@@ -28,7 +28,7 @@
 	}];
 	
 	// If minX is still set to CGFLOAT_MAX, there were no subviews, so just return super's intrinsicContentSize
-	if (minX == CGFLOAT_MAX)
+	if ((fabs((minX) - (CGFLOAT_MAX)) < FLT_EPSILON))
 		return [super intrinsicContentSize];
 	
 	return CGSizeMake(maxX - minX, maxY - minY);

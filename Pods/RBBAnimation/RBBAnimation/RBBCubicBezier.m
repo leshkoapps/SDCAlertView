@@ -47,7 +47,7 @@ CGFloat RBBCubicBezierBinarySubdivide(CGFloat x, CGFloat x1, CGFloat x2) {
 }
 
 extern RBBEasingFunction RBBCubicBezier(CGFloat x1, CGFloat y1, CGFloat x2, CGFloat y2) {
-    if (x1 == y1 && x2 == y2) return RBBEasingFunctionLinear;
+    if ((fabs((x1) - (y1)) < FLT_EPSILON) && (fabs((x2) - (y2)) < FLT_EPSILON)) return RBBEasingFunctionLinear;
 
     return ^(CGFloat x) {
         CGFloat t = RBBCubicBezierBinarySubdivide(x, x1, x2);
