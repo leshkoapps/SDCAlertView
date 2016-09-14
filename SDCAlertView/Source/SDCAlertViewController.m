@@ -31,7 +31,7 @@ static CGFloat			const SDCAlertViewSpringAnimationVelocity = 0;
 + (UIWindow *)sdc_alertWindow;
 @end
 
-@interface SDCAlertViewController ()
+@interface SDCAlertViewController ()<CAAnimationDelegate>
 @property (nonatomic, strong) UIView *alertContainerView;
 @property (nonatomic, strong) UIView *dimmingView;
 @property (nonatomic) BOOL showsDimmingView;
